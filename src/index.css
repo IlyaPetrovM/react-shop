@@ -11,3 +11,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav {
+  padding: 0 1 rem;
+}
+
+.content {
+  min-height: calc(100vh - 70px - 64px);
+  padding: 1rem;
+}
+
+.goods {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+main{
+  margin: 0;
+  padding:0;
+ 
+}
+.preloader-wrapper{
+  margin-top: 5rem;
+  /* position: absolute;
+  left:50%;
+  top:calc(50vh - 70px); */
+}
+.searchButton{
+  position: absolute;
+  top:0;
+  right: 0;
+}
+.typeChecker label{
+  margin-right: 1rem;
+}
