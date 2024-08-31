@@ -45,3 +45,44 @@ main{
 .typeChecker label{
   margin-right: 1rem;
 }
+
+.cart {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+
+  cursor: pointer;
+  z-index: 5;
+  padding: 1rem;
+}
+
+@media (min-width:767px) {
+  .cart{
+    top:5rem;
+    bottom:unset;
+  }
+}
+.basket-list{
+  position: fixed;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background-color: white;
+  width:50rem;
+  max-width: 95%;
+  border-bottom: 10px solid gray;
+  border-right: 10px solid gray;
+  padding: 1rem;
+}
+
+.basket-close{
+  cursor:pointer;
+  position: absolute;
+  top:0.5rem;
+  right:0.5rem;
+  color:#564b4b;
+}
+
+.basket-delete{
+  cursor:pointer;
+}
