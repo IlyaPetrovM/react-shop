@@ -72,7 +72,7 @@ main{
   max-width: 95%;
   border-bottom: 10px solid gray;
   border-right: 10px solid gray;
-  padding: 1rem;
+  animation: show 500ms ease-in-out;
 }
 
 .basket-close{
@@ -85,4 +85,14 @@ main{
 
 .basket-delete{
   cursor:pointer;
+}
+@keyframes show {
+  from{
+    top:70%;
+    opacity: 0;
+  }
+  to {
+    top:50%;
+    opacity: 1;
+  }
 }
