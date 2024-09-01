@@ -5,15 +5,14 @@ function GoodsItem(props) {
   return (
     <div className='card'>
       <div className='card-image'>
-
-        <img src={ icon } onError={(e) => {e.target.src='https://placehold.co/200x200?text='+name}} alt={name} />
+        <img src={ icon } onError={(e) => {e.target.src='https://placehold.co/200x200/fff7cc/999/?text='+name}} alt={name} />
       </div>
-      <span className='card-title'>{name}</span>
       <div className='card-content'>
+        <span className='card-title'>{name}</span>
         <p>{description}</p>
       </div>
       <div className='card-action'>
-        <button className='btn' onClick={ () => {
+        <button className='btn green lighten-1' onClick={ () => {
           addToBasket({offer, name, price })
         } }>
           Купить

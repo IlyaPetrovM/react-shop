@@ -1,6 +1,6 @@
 {
   "name": "store_project",
-  "home":"https://ilyapetrovm.github.io/react-shop/",
+  "homepage":"https://ilyapetrovm.github.io/react-shop/",
   "version": "0.1.1",
   "private": true,
   "dependencies": {
