@@ -5,12 +5,14 @@ import Preloader from "./Preloader";
 import GoodsList from "./GoodsList";
 import Cart from "./Cart";
 import { BasketList } from "./BasketList";
+import { Alert } from "./Alert";
 
 function Shop(props){
   const [goods, setGoods] = useState([]);
   const [loading, setLoading] = useState(true);
   const [order, setOrder] = useState([]);
-  const [isBasketShow, setBasketShow] = useState(false)
+  const [isBasketShow, setBasketShow] = useState(false);
+  const [alertName, setAlertName] = useState('')
 
   const setQuantity = (itemId, newQuantity) => {
     const index = order.findIndex(item => item.offer === itemId)
@@ -28,6 +30,7 @@ function Shop(props){
   }
   const addToBasket = (item) => {
     const itemIndex = order.findIndex(orderItem => orderItem.offer === item.offer)
+    
     if (itemIndex < 0){
       const newItem = {
         ...item,
@@ -45,11 +48,14 @@ function Shop(props){
           return orderItem;
         }
       });
-      setOrder(newOrder)
+      setOrder(newOrder);
     }
+    setAlertName(item.name);
   };
   
-
+  const closeAlert = () => {
+    setAlertName('');
+  }
 
 
   useEffect(function getGoods(){
@@ -81,6 +87,9 @@ function Shop(props){
           setQuantity={setQuantity}
         />
       )}
+      { 
+        alertName && <Alert name={ alertName } closeAlert = { closeAlert }/> 
+      }
     </main>
   );
 }

@@ -6,9 +6,27 @@ function BasketItem(props){
   } = props;
   return (
     <li  className="collection-item">
-      { name } x  { quantity }  = { price * quantity }
-      <button onClick={()=> quantity > 1 ? setQuantity(id, quantity-1) : 1}> - </button>
-      <button onClick={()=> setQuantity(id, quantity + 1)}> + </button>
+
+      { name } 
+
+      <i 
+        className='material-icons basket-quantity'
+        onClick={ ()=> quantity > 1 ? setQuantity(id, quantity-1) : 1 }
+        > remove </i> 
+      {' '}
+
+      x{ quantity }
+
+      <i 
+        className='material-icons basket-quantity' 
+        onClick={ ()=> setQuantity(id, quantity + 1) }
+        > add </i> 
+      {' '}
+
+
+      = { price * quantity }
+
+
       <span className='secondary-content' onClick={() => removeFromBasket(id)}>
         <i className="material-icons basket-delete" >close</i>
       </span>
