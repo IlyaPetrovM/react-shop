@@ -1,12 +1,12 @@
 function GoodsItem(props) {
-  const { offer, name, description, price, full_background, 
+  const { offer, name, description, price, full_background, icon,
     addToBasket = Function.prototype } = props;
 
   return (
     <div className='card'>
       <div className='card-image'>
 
-        <img src={full_background} alt={name} />
+        <img src={ icon } onError={(e) => {e.target.src='https://placehold.co/200x200?text='+name}} alt={name} />
       </div>
       <span className='card-title'>{name}</span>
       <div className='card-content'>
