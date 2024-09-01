@@ -12,8 +12,15 @@ function Shop(props){
   const [order, setOrder] = useState([]);
   const [isBasketShow, setBasketShow] = useState(false)
 
+  const setQuantity = (itemId, newQuantity) => {
+    const index = order.findIndex(item => item.offer === itemId)
+    const newOrder = [...order];
+    newOrder[index].quantity = newQuantity;
+    setOrder(newOrder)
+  }
+
   const removeFromBasket = (itemId) => {
-    const newOrder = order.filter(el => el.offer !== itemId)
+    const newOrder = order.filter(el => el.offer !== itemId) // alarm! use offer field instead of id
     setOrder(newOrder);
   }
   const handleBasketShow = () => {
@@ -59,14 +66,21 @@ function Shop(props){
   }, [])
 
   return (
-    <main className="container content">
-      <Cart quantity={order.length} handleBasketShow={handleBasketShow}/>
-      {loading ? <Preloader /> : <GoodsList goods={goods} addToBasket={addToBasket} />}
-      {
-        isBasketShow && <BasketList order={order} 
-        handleBasketShow={handleBasketShow} 
-        removeFromBasket={removeFromBasket} />
-      }
+    <main className='container content'>
+      <Cart quantity={order.length} handleBasketShow={handleBasketShow} />
+      {loading ? (
+        <Preloader />
+      ) : (
+        <GoodsList goods={goods} addToBasket={addToBasket} />
+      )}
+      {isBasketShow && (
+        <BasketList
+          order={order}
+          handleBasketShow={handleBasketShow}
+          removeFromBasket={removeFromBasket}
+          setQuantity={setQuantity}
+        />
+      )}
     </main>
   );
 }
