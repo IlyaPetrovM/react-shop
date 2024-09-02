@@ -11,8 +11,8 @@ function BasketItem(props){
      setQuantity = Function.prototype,
   } = props;
 
-  // const { example } = useContext(ShopContext);
-  // console.log(example)
+  const { example } = useContext(ShopContext);
+  console.log(example)
 
 
   return (

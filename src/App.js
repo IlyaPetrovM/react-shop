@@ -9,9 +9,9 @@ function App() {
   return (
     <>
       <Header />
-      {/* <ContextProvider> */}
+      <ContextProvider>
         <Shop />
-      {/* </ContextProvider> */}
+      </ContextProvider>
       <Footer />
     </>
   );
