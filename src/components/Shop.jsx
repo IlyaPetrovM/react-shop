@@ -33,7 +33,7 @@ function Shop(props){
 
 
   const addToBasket = (item) => {
-    const itemIndex = order.findIndex(orderItem => orderItem.offerId === item.id)
+    const itemIndex = order.findIndex(orderItem => orderItem.id === item.id)
     
     if (itemIndex < 0){
       const newItem = {

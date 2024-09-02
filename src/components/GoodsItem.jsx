@@ -1,7 +1,7 @@
 function GoodsItem(props) {
   const { 
     offerId: id, 
-    storeName: name, 
+    displayName: name, 
     displayDescription: description, 
     price: { regularPrice: price }, 
     displayAssets: [{ background:icon }],
