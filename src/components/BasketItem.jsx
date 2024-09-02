@@ -1,9 +1,20 @@
+import { useContext } from 'react'
+import { ShopContext } from '../context';
+
 function BasketItem(props){
   const {
-    offer: id, name, price, quantity,
+    id, 
+    name,
+    price,
+    quantity,
     removeFromBasket = Function.prototype,
      setQuantity = Function.prototype,
   } = props;
+
+  // const { example } = useContext(ShopContext);
+  // console.log(example)
+
+
   return (
     <li  className="collection-item">
 
@@ -24,7 +35,7 @@ function BasketItem(props){
       {' '}
 
 
-      = { price * quantity }
+      = { price * quantity } руб.
 
 
       <span className='secondary-content' onClick={() => removeFromBasket(id)}>
