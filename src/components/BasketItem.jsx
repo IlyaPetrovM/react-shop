@@ -7,12 +7,9 @@ function BasketItem(props){
     name,
     price,
     quantity,
-    removeFromBasket = Function.prototype,
-     setQuantity = Function.prototype,
   } = props;
 
-  const { example } = useContext(ShopContext);
-  console.log(example)
+  const { removeFromBasket, setQuantity } = useContext(ShopContext);
 
 
   return (
